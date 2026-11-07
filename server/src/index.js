@@ -17,7 +17,7 @@ const { User } = require('./models');
 const app = express();
 app.disable('x-powered-by');
 app.use('/api', helmet({ crossOriginResourcePolicy: false }));
-app.use(cors({ origin: config.clientOrigin, credentials: true }));
+app.use(cors({ origin: config.clientOrigins, credentials: true }));
 app.use(cookieParser());
 app.use(express.json({ limit: '5mb' }));
 app.use(sanitizeRequest);
@@ -90,6 +90,17 @@ async function tickRecurring() {
 }
 
 async function main() {
+  if (process.env.NODE_ENV === 'production') {
+    if (config.jwtSecretIsDefault) throw new Error('Set JWT_SECRET to a unique secret before starting in production.');
+    if (!config.mongoUri) throw new Error('Set MONGO_URI to a persistent MongoDB database before starting in production.');
+    if (!config.cookieSecure) throw new Error('Set COOKIE_SECURE=true when running in production.');
+    if (!['lax', 'strict', 'none'].includes(config.cookieSameSite)) {
+      throw new Error('COOKIE_SAME_SITE must be "lax", "strict", or "none".');
+    }
+    if (config.cookieSameSite === 'none' && !config.cookieSecure) {
+      throw new Error('COOKIE_SAME_SITE=none requires COOKIE_SECURE=true.');
+    }
+  }
   const db = await connect();
   if (config.jwtSecretIsDefault) {
     console.log('JWT_SECRET is not set. Using the development secret. Set JWT_SECRET before a public deploy.');

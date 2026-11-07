@@ -46,7 +46,7 @@ function cookieOptions(maxAge, httpOnly = true) {
   return {
     httpOnly,
     secure: config.cookieSecure,
-    sameSite: 'lax',
+    sameSite: config.cookieSameSite,
     path: '/',
     maxAge,
   };
@@ -58,7 +58,7 @@ function setAuthCookies(res, accessToken, refreshToken) {
 }
 
 function clearAuthCookies(res) {
-  const base = { path: '/', sameSite: 'lax', secure: config.cookieSecure };
+  const base = { path: '/', sameSite: config.cookieSameSite, secure: config.cookieSecure };
   res.clearCookie('ds_access', { ...base, httpOnly: true });
   res.clearCookie('ds_refresh', { ...base, httpOnly: true });
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { api, readUtm } from '../lib/api';
+import { api, apiUrl, readUtm } from '../lib/api';
 import { useAuth } from '../context/AuthContext';
 import { BusyButton, FormNote, MailPreview, PasswordField } from '../components/Ui';
 
@@ -50,7 +50,7 @@ export function Login() {
         <PasswordField label="Password" name="password" value={password} onChange={(event) => setPassword(event.target.value)} autoComplete="current-password" minLength={1} />
         <BusyButton busy={busy} type="submit">Log in</BusyButton>
       </form>
-      <a className="btn ghost full" href="/api/auth/google">Continue with Google</a>
+      <a className="btn ghost full" href={apiUrl('/api/auth/google')}>Continue with Google</a>
       <p className="fine"><Link to="/forgot-password">Forgot password</Link> · <Link to="/register">Create an account</Link></p>
     </article>
   );
@@ -110,7 +110,7 @@ export function Register() {
         <BusyButton busy={busy} type="submit">Create account</BusyButton>
       </form>
       {success ? <Link className="btn" to="/app">Go to the dashboard</Link> : null}
-      <a className="btn ghost full" href="/api/auth/google">Continue with Google</a>
+      <a className="btn ghost full" href={apiUrl('/api/auth/google')}>Continue with Google</a>
       <p className="fine">Already registered? <Link to="/login">Log in</Link></p>
     </article>
   );

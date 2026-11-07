@@ -1,7 +1,15 @@
 import { todayInput } from './format';
 
+const API_BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 let csrf = '';
 let csrfPromise = null;
+
+export function apiUrl(path) {
+  if (process.env.NODE_ENV === 'production' && !API_BASE_URL) {
+    throw new Error('Set REACT_APP_API_URL to the deployed API URL before building the frontend.');
+  }
+  return `${API_BASE_URL}${path}`;
+}
 
 const noRefresh = [
   '/api/auth/login',
@@ -25,7 +33,7 @@ export function readUtm() {
 async function ensureCsrf(force = false) {
   if (csrf && !force) return csrf;
   if (!csrfPromise) {
-    csrfPromise = fetch('/api/auth/csrf', {
+    csrfPromise = fetch(apiUrl('/api/auth/csrf'), {
       credentials: 'include',
       headers: { 'x-client-date': todayInput() },
     })
@@ -49,9 +57,9 @@ async function request(path, options = {}, allowRefresh = true) {
     'x-client-date': todayInput(),
     ...(options.headers || {}),
   };
-  const res = await fetch(path, { credentials: 'include', ...options, headers });
+  const res = await fetch(apiUrl(path), { credentials: 'include', ...options, headers });
   if (res.status === 401 && allowRefresh && !noRefresh.some((item) => path.startsWith(item))) {
-    const refreshed = await fetch('/api/auth/refresh', {
+    const refreshed = await fetch(apiUrl('/api/auth/refresh'), {
       method: 'POST',
       credentials: 'include',
       headers: { 'x-csrf-token': csrf, 'x-client-date': todayInput() },
@@ -94,7 +102,7 @@ export const api = {
 
 export async function download(path, body, filename) {
   await ensureCsrf();
-  const res = await fetch(path, {
+  const res = await fetch(apiUrl(path), {
     method: 'POST',
     credentials: 'include',
     headers: {

@@ -259,7 +259,7 @@ router.get('/google', (req, res) => {
   res.cookie('ds_oauth_state', state, {
     httpOnly: true,
     secure: config.cookieSecure,
-    sameSite: 'lax',
+    sameSite: config.cookieSameSite,
     path: '/',
     maxAge: 10 * 60 * 1000,
   });
@@ -277,7 +277,12 @@ router.get('/google/callback', wrap(async (req, res) => {
   const redirectError = (code) => res.redirect(`${config.clientOrigin}/login?error=${code}`);
   const state = req.query.state;
   if (!state || state !== req.cookies?.ds_oauth_state || !req.query.code) return redirectError('google_state');
-  res.clearCookie('ds_oauth_state', { path: '/', sameSite: 'lax', secure: config.cookieSecure, httpOnly: true });
+  res.clearCookie('ds_oauth_state', {
+    path: '/',
+    sameSite: config.cookieSameSite,
+    secure: config.cookieSecure,
+    httpOnly: true,
+  });
   const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
