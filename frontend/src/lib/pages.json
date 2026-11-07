@@ -1,0 +1,222 @@
+{
+  "siteUrl": "https://dimestack.app",
+  "software": {
+    "@type": "SoftwareApplication",
+    "name": "DimeStack",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://dimestack.app",
+    "description": "Track ledgers, budgets, recurring transactions, goals, and net worth.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+  },
+  "website": {
+    "@type": "WebSite",
+    "name": "DimeStack",
+    "url": "https://dimestack.app",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dimestack.app/search?q={query}",
+      "query-input": "required name=query"
+    }
+  },
+  "pages": {
+    "/": {
+      "title": "DimeStack — Personal finance tracker",
+      "description": "Track income, expenses, budgets, goals, and net worth across multiple ledgers with DimeStack.",
+      "h1": "Track every dollar in one quiet place",
+      "intro": "DimeStack is a personal finance tracker for people who want clear ledgers, honest charts, and a record they can export.",
+      "robots": "index,follow",
+      "keywords": "finance tracker ledger budget net worth goals",
+      "crumb": [{ "href": "", "label": "Home" }]
+    },
+    "/about": {
+      "title": "About DimeStack",
+      "description": "DimeStack is a personal finance tracker for households and freelancers who want a clear ledger.",
+      "h1": "About DimeStack",
+      "intro": "DimeStack keeps income, expenses, budgets, and net worth in ledgers that stay easy to read.",
+      "robots": "index,follow",
+      "keywords": "about finance tracker ledger",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "About" }]
+    },
+    "/privacy": {
+      "title": "Privacy policy — DimeStack",
+      "description": "How DimeStack stores ledgers, session cookies, email addresses, and campaign parameters from your visit.",
+      "h1": "Privacy policy",
+      "intro": "This policy describes the account data, finance records, cookies, and campaign parameters DimeStack keeps.",
+      "robots": "index,follow",
+      "keywords": "privacy cookies sessions email",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Privacy" }]
+    },
+    "/security": {
+      "title": "Security at DimeStack",
+      "description": "DimeStack hashes passwords, keeps sessions in HTTP-only cookies, verifies email, and limits sign-in attempts.",
+      "h1": "How DimeStack protects your account",
+      "intro": "Sign-in is rate limited, passwords are hashed, and each person can only read their own ledgers.",
+      "robots": "index,follow",
+      "keywords": "security password sessions oauth csrf",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Security" }]
+    },
+    "/login": {
+      "title": "Log in — DimeStack",
+      "description": "Sign in to your DimeStack ledgers with email or Google.",
+      "h1": "Log in",
+      "intro": "Use the email on your account, or continue with Google if you linked it.",
+      "robots": "index,follow",
+      "keywords": "login sign in google",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Log in" }]
+    },
+    "/register": {
+      "title": "Create your DimeStack account",
+      "description": "Open a DimeStack account to track income, expenses, goals, and net worth.",
+      "h1": "Create your account",
+      "intro": "You will get a personal ledger, cash and bank accounts, and a starter set of categories.",
+      "robots": "index,follow",
+      "keywords": "register create account",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Create account" }]
+    },
+    "/forgot-password": {
+      "title": "Forgot password — DimeStack",
+      "description": "Request a password reset code or a secure link for your DimeStack account.",
+      "h1": "Forgot your password",
+      "intro": "We will email a 6-digit code and a secure link that expire in 15 minutes.",
+      "robots": "index,follow",
+      "keywords": "forgot password reset",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/login", "label": "Log in" }, { "href": "", "label": "Forgot password" }]
+    },
+    "/reset-password": {
+      "title": "Choose a new password — DimeStack",
+      "description": "Set a new DimeStack password with the reset code or the secure link from your email.",
+      "h1": "Choose a new password",
+      "intro": "Paste the 6-digit code from the email, or open the link that already includes a token.",
+      "robots": "noindex,follow",
+      "keywords": "reset password",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/login", "label": "Log in" }, { "href": "", "label": "Reset password" }]
+    },
+    "/verify-email": {
+      "title": "Verify your email — DimeStack",
+      "description": "Confirm your email address before recording transactions in DimeStack.",
+      "h1": "Verify your email",
+      "intro": "Open the verification link from your inbox, or paste the page you were sent.",
+      "robots": "noindex,follow",
+      "keywords": "verify email",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Verify email" }]
+    },
+    "/search": {
+      "title": "Search DimeStack",
+      "description": "Search DimeStack pages and, when you are signed in, your transactions, ledgers, and goals.",
+      "h1": "Search",
+      "intro": "Look through the public guides and, if you are signed in, your own records.",
+      "robots": "index,follow",
+      "keywords": "search",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Search" }]
+    },
+    "/app": {
+      "title": "Dashboard — DimeStack",
+      "description": "See income, expenses, balance over time, and how transactions are distributed.",
+      "h1": "Dashboard",
+      "intro": "A summary of the selected ledger for the dates you choose.",
+      "robots": "noindex,nofollow",
+      "keywords": "dashboard summary charts balance",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Dashboard" }]
+    },
+    "/app/ledgers": {
+      "title": "Ledgers — DimeStack",
+      "description": "Create separate ledgers for household, freelance, or travel money.",
+      "h1": "Ledgers",
+      "intro": "Each ledger keeps its own transactions and a default cash account.",
+      "robots": "noindex,nofollow",
+      "keywords": "multiple ledgers",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Ledgers" }]
+    },
+    "/app/transactions": {
+      "title": "Transactions — DimeStack",
+      "description": "Record, search, filter, edit, import, and export income and expenses.",
+      "h1": "Transactions",
+      "intro": "Enter an amount, a description, and whether the money came in or went out.",
+      "robots": "noindex,nofollow",
+      "keywords": "transactions expense income csv",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Transactions" }]
+    },
+    "/app/budgets": {
+      "title": "Monthly budgets — DimeStack",
+      "description": "Set a monthly budget for each expense category and compare it with spending.",
+      "h1": "Monthly budgets",
+      "intro": "Pick a month, choose a category, and set the amount you intend to spend.",
+      "robots": "noindex,nofollow",
+      "keywords": "monthly budget",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Budgets" }]
+    },
+    "/app/recurring": {
+      "title": "Recurring transactions — DimeStack",
+      "description": "Schedule income and expenses that repeat each week, month, or year.",
+      "h1": "Recurring transactions",
+      "intro": "DimeStack records a due schedule the next time you open your books.",
+      "robots": "noindex,nofollow",
+      "keywords": "recurring transactions schedule",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Recurring" }]
+    },
+    "/app/goals": {
+      "title": "Financial goals — DimeStack",
+      "description": "Set a savings goal and record contributions until you reach the target.",
+      "h1": "Financial goals",
+      "intro": "Name a target, set a deadline if you have one, and add money as you save it.",
+      "robots": "noindex,nofollow",
+      "keywords": "savings goals progress",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Goals" }]
+    },
+    "/app/net-worth": {
+      "title": "Net worth — DimeStack",
+      "description": "Track assets, liabilities, account transfers, and net worth over time.",
+      "h1": "Net worth",
+      "intro": "Net worth is the total of your asset accounts minus what your liability accounts owe.",
+      "robots": "noindex,nofollow",
+      "keywords": "net worth assets liabilities transfers",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Net worth" }]
+    },
+    "/app/reports": {
+      "title": "Reports — DimeStack",
+      "description": "Compare income, expenses, and savings across months, then download a PDF.",
+      "h1": "Reports",
+      "intro": "Review a date range, compare months, and download the same summary as a PDF.",
+      "robots": "noindex,nofollow",
+      "keywords": "monthly comparison pdf report",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Reports" }]
+    },
+    "/app/categories": {
+      "title": "Categories — DimeStack",
+      "description": "Organize income and expenses with categories and subcategories.",
+      "h1": "Categories",
+      "intro": "Top-level categories group your charts. Subcategories keep the ledger more specific.",
+      "robots": "noindex,nofollow",
+      "keywords": "categories subcategories",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Categories" }]
+    },
+    "/app/profile": {
+      "title": "Profile — DimeStack",
+      "description": "Update your name, phone, currency, time zone, bio, and password.",
+      "h1": "Profile",
+      "intro": "These details appear on your reports and control how amounts are displayed.",
+      "robots": "noindex,nofollow",
+      "keywords": "profile password currency",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Profile" }]
+    },
+    "/app/sessions": {
+      "title": "Active sessions — DimeStack",
+      "description": "Review devices signed in to DimeStack and log out of the ones you do not recognize.",
+      "h1": "Active sessions",
+      "intro": "Each sign-in keeps its own session. You can end one device or every device.",
+      "robots": "noindex,nofollow",
+      "keywords": "sessions logout devices",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "/app", "label": "Dashboard" }, { "href": "", "label": "Sessions" }]
+    },
+    "/404": {
+      "title": "Page not found — DimeStack",
+      "description": "This DimeStack address does not match a page. Search the site or return home.",
+      "h1": "This page is not on DimeStack",
+      "intro": "The link may be out of date. Try search, or go back to the home page.",
+      "robots": "noindex,nofollow",
+      "keywords": "not found",
+      "crumb": [{ "href": "/", "label": "Home" }, { "href": "", "label": "Page not found" }]
+    }
+  }
+}

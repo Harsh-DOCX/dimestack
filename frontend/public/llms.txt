@@ -1,0 +1,26 @@
+# DimeStack
+
+> DimeStack is a personal finance tracker for households and freelancers. It keeps multiple ledgers, transactions, budgets, goals, and net worth.
+
+DimeStack is a web app for keeping personal ledgers.
+
+## Pages
+
+- [Home](https://dimestack.app/): Product overview, charts, and how a ledger works
+- [About](https://dimestack.app/about): What the tracker keeps and how the ledger is organized
+- [Privacy](https://dimestack.app/privacy): Cookies, sessions, email, and campaign parameters
+- [Security](https://dimestack.app/security): Password hashing, email verification, sessions, and request limits
+- [Search](https://dimestack.app/search): Search public pages and signed-in records
+- [Log in](https://dimestack.app/login): Email or Google sign-in
+- [Create account](https://dimestack.app/register): Open a ledger
+
+Signed-in tools (dashboard, transactions, budgets, recurring items, goals, net worth, reports, categories, profile, and sessions) live under /app and are not indexed.
+
+## Records you can keep
+
+- Several ledgers, each with its own accounts
+- Income, expenses, and transfers between accounts
+- Categories and subcategories
+- Monthly budgets and recurring transactions
+- Savings goals and net worth (assets minus liabilities)
+- CSV import and export, plus a PDF report
