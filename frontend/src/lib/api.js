@@ -1,14 +1,10 @@
 import { todayInput } from './format';
 
-const API_BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/+$/, '');
 let csrf = '';
 let csrfPromise = null;
 
 export function apiUrl(path) {
-  if (process.env.NODE_ENV === 'production' && !API_BASE_URL) {
-    throw new Error('Set REACT_APP_API_URL to the deployed API URL before building the frontend.');
-  }
-  return `${API_BASE_URL}${path}`;
+  return path;
 }
 
 const noRefresh = [
